@@ -364,7 +364,13 @@
     <Compile Include="IsolatorLimitResultProvider.cs" />
     <Compile Include="ITimeProvider.cs" />
     <Compile Include="Orders\Fees\AlphaStreamsFeeModel.cs" />
+    <Compile Include="Orders\Fills\CfdFillModel.cs" />
+    <Compile Include="Orders\Fills\CryptoFillModel.cs" />
+    <Compile Include="Orders\Fills\FuturesFillModel.cs" />
+    <Compile Include="Orders\Fills\OptionFillModel.cs" />
+    <Compile Include="Orders\Fills\ForexFillModel.cs" />
     <Compile Include="Orders\Fills\Fill.cs" />
+    <Compile Include="Orders\Fills\EquityFillModel.cs" />
     <Compile Include="Orders\Fills\FillModelParameters.cs" />
     <Compile Include="Orders\Fees\FeeModel.cs" />
     <Compile Include="Orders\Fees\OrderFee.cs" />
