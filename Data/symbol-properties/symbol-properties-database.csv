@@ -915,7 +915,6 @@ bitfinex,ZRXDAI,crypto,0x-DAI (Multi-collateral),DAI,1,0.00001,0.00000001
 bitfinex,ZRXETH,crypto,0x-Ethereum,ETH,1,0.00001,20.
 bitfinex,ZRXUSD,crypto,0x-US Dollar,USD,1,0.00001,20.
 bitfinex,ZRXZRX,crypto,0x-0x,ZRX,1,0.00001,0.00000001
-bitfinex,ZRXUSD,crypto,0x-US Dollar,USD,1,0.00001,20.
 
 binance,ETHBTC,crypto,ETHBTC,BTC,1,0.00000100,0.00100000
 binance,LTCBTC,crypto,LTCBTC,BTC,1,0.00000100,0.01000000
