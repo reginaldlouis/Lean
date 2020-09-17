@@ -6,15 +6,29 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "restore",
+            "type": "shell",
+            "command": "nuget",
+            "args": [
+                "restore"
+            ]
+        },
+        {
             "label": "build",
             "type": "shell",
             "command": "msbuild",
             "args": [
                 "/p:Configuration=Debug",
                 "/p:DebugType=portable",
-                "/t:build",
+                "/t:build"
             ],
-            "group": "build",
+            "dependsOn": [
+                "restore"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
             "presentation": {
                 "reveal": "silent"
             },
@@ -42,7 +56,7 @@
             "type": "shell",
             "isBackground": true,
             "windows": {
-                "command": "${workspaceFolder}/run_docker.bat",
+                "command": "${workspaceFolder}/run_docker.bat"
             },
             "linux": {
                 "command": "${workspaceFolder}/run_docker.sh"
@@ -61,21 +75,21 @@
             ],
             "problemMatcher": [
                 {
-                  "pattern": [
-                    {
-                      "regexp": ".",
-                      "file": 1,
-                      "location": 2,
-                      "message": 3
+                    "pattern": [
+                        {
+                            "regexp": ".",
+                            "file": 1,
+                            "location": 2,
+                            "message": 3
+                        }
+                    ],
+                    "background": {
+                        "activeOnStart": true,
+                        "beginsPattern": ".",
+                        "endsPattern": "."
                     }
-                  ],
-                  "background": {
-                    "activeOnStart": true,
-                    "beginsPattern": ".",
-                    "endsPattern": ".",
-                  }
                 }
-              ]
+            ]
         },
         {
             "label": "close-docker",
@@ -87,9 +101,9 @@
                 "focus": false,
                 "panel": "shared",
                 "showReuseMessage": false,
-                "clear": true,
+                "clear": true
             },
-            "linux":{
+            "linux": {
                 "command": "sudo docker stop LeanEngine"
             }
         },
@@ -97,7 +111,7 @@
             "label": "Run Application",
             "type": "process",
             "command": "QuantConnect.Lean.Launcher.exe",
-            "args" : [
+            "args": [
                 "--data-folder",
                 "${workspaceFolder}/Data",
                 "--config",
