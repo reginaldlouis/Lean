@@ -322,8 +322,6 @@ namespace QuantConnect.ToolBox
                         break;
                 }
             }
-
-            Environment.Exit(0);
         }
 
         private static void PrintMessageAndExit(int exitCode = 0, string message = "")
