@@ -30,9 +30,9 @@ namespace QuantConnect.ToolBox.EODConverter
             public Decimal? Volume { get; set; }
         }
 
-        public static void EODConverter(string sourceDir, string destinationDir)
+        public static void EODConverter(string sourceDir, string market, string destinationDir)
         {
-            Market.Add("cad", 100);
+            Market.Add(market, 100);
 
             try
             {
@@ -46,7 +46,7 @@ namespace QuantConnect.ToolBox.EODConverter
                         csv.Configuration.HasHeaderRecord = false;
                         var records = csv.GetRecords<Row>();
 
-                        var symbol = Symbol.Create(ticker, SecurityType.Equity, "cad");
+                        var symbol = Symbol.Create(ticker, SecurityType.Equity, market);
 
 
                         var bars =
