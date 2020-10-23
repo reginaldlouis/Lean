@@ -314,6 +314,7 @@ namespace QuantConnect.ToolBox
                     case "eodconverter":
                         EODConverterProgram.EODConverter(
                             GetParameterOrExit(optionsObject, "source-dir"),
+                            GetParameterOrExit(optionsObject, "market"),
                             GetParameterOrExit(optionsObject, "destination-dir"));
                         break;
 
